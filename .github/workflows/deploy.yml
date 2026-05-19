@@ -44,4 +44,4 @@ jobs:
           git config user.email github-actions@github.com
           git add k8s/deployment.yml
           git commit -m "Update image tag to ${{ env.IMAGE_TAG }}" || echo "No change"
-          git push
+          git push https://${{ secrets.PAT_TOKEN }}@github.com/payalvishwekar/githubactions-eks.git HEAD:main

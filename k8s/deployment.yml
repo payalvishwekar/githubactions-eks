@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-devops
+  namespace: default
+  labels:
+    app: hello-devops
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hello-devops
+  template:
+    metadata:
+      labels:
+        app: hello-devops
+    spec:
+      containers:
+      - name: hello-devops
+        image: IMAGE_PLACEHOLDER  # Will be updated by GitHub Actions
+        ports:
+        - containerPort: 3000
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3000

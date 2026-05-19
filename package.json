@@ -1,0 +1,9 @@
+{
+  "name": "hello-devops-world",
+  "version": "1.0.0",
+  "description": "Simple Node.js app for EKS + ArgoCD",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  }
+}

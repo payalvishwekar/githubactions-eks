@@ -46,7 +46,7 @@ jobs:
           
           git add k8s/deployment.yml
           git commit -m "updated with latest image"
-          git push origin main
+          #git push origin main
           # # git config user.name "github-actions[bot]"
           # # git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
@@ -58,5 +58,5 @@ jobs:
           #   echo "No changes to commit"
           # else
           #   git commit -m "Update image to ${{ env.IMAGE_TAG }}"
-          #   git push https://${{ secrets.PAT_TOKEN }}@github.com/payalvishwekar/githubactions-eks.git HEAD:main
+          git push https://${{ secrets.PAT_TOKEN }}@github.com/payalvishwekar/githubactions-eks.git HEAD:main
           # fi
